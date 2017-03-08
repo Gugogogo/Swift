@@ -33,7 +33,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         view.backgroundColor = RGB2244546
         view.addSubview(MytableView)
         
-        getData()
+        getCellData()
         getScrollView()
     }
     
@@ -94,6 +94,28 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self.MytableView.reloadData()
             }else{return}
         }
+    }
+    
+    
+    func getCellData() {
+        
+        let netWork = GuNetworkTools()
+        
+        netWork.getRequestData(type: .get, URLString: "http://m.adjo2o.com/webproxy/api/adjo2o/adjStore!findByTag.do?pageNum=1&pagesize=10&tagId=1128&cityCode=490") { (response) in
+            
+            print(response)
+            
+            let json = JSON.init(data: response as! Data)
+            let model = findByTagIdData.init(fromJson:json)
+            if model.result == 1{
+                for data in model.data{
+                    
+                    self.DataSource.add(data)
+                }
+                self.MytableView.reloadData()
+            }else{return}
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

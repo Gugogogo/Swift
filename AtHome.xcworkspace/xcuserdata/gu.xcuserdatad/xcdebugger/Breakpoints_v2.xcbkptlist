@@ -20,12 +20,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
-            timestampString = "499782672.736701"
+            timestampString = "510674714.662674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "newPostingBtn(button:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
+            timestampString = "510673492.245488"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
+            timestampString = "510673525.624829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "getCellData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../gu/Swift-Athome/AtHome/Tool/GuNetworkTools.swift"
+            timestampString = "510673537.177972"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getRequestData(type:URLString:parameters:finishedCallBack:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AtHome.GuNetworkTools.getRequestData (type : AtHome.Methodtype, URLString : Swift.String, parameters : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, finishedCallBack : (Swift.AnyObject) -&gt; ()) -&gt; ()"
+                  moduleName = "AtHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gu/Swift-Athome/AtHome/Tool/GuNetworkTools.swift"
+                  timestampString = "510674925.252098"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "97">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AtHome.GuNetworkTools.(getRequestData (type : AtHome.Methodtype, URLString : Swift.String, parameters : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, finishedCallBack : (Swift.AnyObject) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "AtHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gu/Swift-Athome/AtHome/Tool/GuNetworkTools.swift"
+                  timestampString = "510674925.254776"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
+            timestampString = "510674703.87032"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "getCellData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../gu/Swift-Athome/AtHome/Tool/GuNetworkTools.swift"
+            timestampString = "510674748.628076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getRequestData(type:URLString:parameters:finishedCallBack:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
