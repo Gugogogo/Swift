@@ -1,0 +1,6 @@
+framework module Pods_AtHome {
+  umbrella header "Pods-AtHome-umbrella.h"
+
+  export *
+  module * { export * }
+}
