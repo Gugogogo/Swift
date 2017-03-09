@@ -25,10 +25,11 @@
 		84506F811DB651D500C2EDD1 /* GuRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84506F801DB651D500C2EDD1 /* GuRequest.swift */; };
 		8454A19F1D4756C3009DF838 /* RootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454A19E1D4756C3009DF838 /* RootClass.swift */; };
 		846673571DB1DFD10034C4D2 /* findByTagId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846673561DB1DFD10034C4D2 /* findByTagId.swift */; };
-		8483AC9E1E7035570060087E /* GuNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483AC9D1E7035570060087E /* GuNetworkTools.swift */; };
 		848F8FEC1DCA198200B7B81E /* GuPreferentialPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F8FEB1DCA198200B7B81E /* GuPreferentialPayViewController.swift */; };
 		848F8FF01DCA1AD700B7B81E /* GuPreferetionHeardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F8FEF1DCA1AD700B7B81E /* GuPreferetionHeardView.swift */; };
 		849FB40D1D484FF7008AC98D /* AdsAndClassificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FB40C1D484FF7008AC98D /* AdsAndClassificationResponse.swift */; };
+		84B451CC1E70F0E2001FF600 /* GuNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B451CB1E70F0E2001FF600 /* GuNetworkTools.swift */; };
+		84B451CE1E70FB12001FF600 /* GuThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B451CD1E70FB12001FF600 /* GuThirdView.swift */; };
 		84BD989D1D7446F600F4E0BC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BD98991D7446DD00F4E0BC /* Alamofire.framework */; };
 		84DAF0581D7AC41D008A5B59 /* GuPreferentialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAF0571D7AC41D008A5B59 /* GuPreferentialViewController.swift */; };
 		84DAF05E1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAF05C1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift */; };
@@ -76,10 +77,11 @@
 		84506F801DB651D500C2EDD1 /* GuRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuRequest.swift; sourceTree = "<group>"; };
 		8454A19E1D4756C3009DF838 /* RootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootClass.swift; sourceTree = "<group>"; };
 		846673561DB1DFD10034C4D2 /* findByTagId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findByTagId.swift; sourceTree = "<group>"; };
-		8483AC9D1E7035570060087E /* GuNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuNetworkTools.swift; sourceTree = "<group>"; };
 		848F8FEB1DCA198200B7B81E /* GuPreferentialPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuPreferentialPayViewController.swift; path = "优惠买单便利店/Controller/优惠买单/GuPreferentialPayViewController.swift"; sourceTree = "<group>"; };
 		848F8FEF1DCA1AD700B7B81E /* GuPreferetionHeardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuPreferetionHeardView.swift; path = "优惠买单便利店/Controller/优惠买单/View/GuPreferetionHeardView.swift"; sourceTree = "<group>"; };
 		849FB40C1D484FF7008AC98D /* AdsAndClassificationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsAndClassificationResponse.swift; sourceTree = "<group>"; };
+		84B451CB1E70F0E2001FF600 /* GuNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuNetworkTools.swift; sourceTree = "<group>"; };
+		84B451CD1E70FB12001FF600 /* GuThirdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuThirdView.swift; path = View/GuThirdView.swift; sourceTree = "<group>"; };
 		84BD98991D7446DD00F4E0BC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "/Users/gu/Library/Developer/Xcode/DerivedData/AtHome-gadimahfsbvjrlgotfzysvtemxby/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<absolute>"; };
 		84DAF0571D7AC41D008A5B59 /* GuPreferentialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuPreferentialViewController.swift; path = "优惠买单便利店/Controller/GuPreferentialViewController.swift"; sourceTree = "<group>"; };
 		84DAF05C1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuPreferentialTableViewCell.swift; path = "优惠买单便利店/View/GuPreferentialTableViewCell.swift"; sourceTree = "<group>"; };
@@ -144,7 +146,7 @@
 		842ACFE21CC496E300DD7C92 /* AtHome */ = {
 			isa = PBXGroup;
 			children = (
-				8483AC9C1E70350A0060087E /* Tool */,
+				84B451CA1E70F0E2001FF600 /* Tool */,
 				84DAF0561D7AC3A2008A5B59 /* 优惠买单便利店 */,
 				84F8EF401D08F862003B820E /* 首页 */,
 				84F8EF461D08F9FB003B820E /* 我的 */,
@@ -161,15 +163,6 @@
 			children = (
 			);
 			name = source;
-			sourceTree = "<group>";
-		};
-		8483AC9C1E70350A0060087E /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				8483AC9D1E7035570060087E /* GuNetworkTools.swift */,
-			);
-			name = Tool;
-			path = "../../../gu/Swift-Athome/AtHome/Tool";
 			sourceTree = "<group>";
 		};
 		848F8FE91DCA190000B7B81E /* 列表 */ = {
@@ -205,6 +198,14 @@
 				848F8FEF1DCA1AD700B7B81E /* GuPreferetionHeardView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		84B451CA1E70F0E2001FF600 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				84B451CB1E70F0E2001FF600 /* GuNetworkTools.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		84C552A21D44F5AD0037D048 /* Model */ = {
@@ -269,6 +270,7 @@
 				844C19401D43BFBB0053C03C /* GuHomeTableViewCell.xib */,
 				84DE4A4B1D4E4DD1007F7984 /* GuHomeCollectionViewCell.swift */,
 				84DE4A4C1D4E4DD1007F7984 /* GuHomeCollectionViewCell.xib */,
+				84B451CD1E70FB12001FF600 /* GuThirdView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -469,13 +471,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B451CE1E70FB12001FF600 /* GuThirdView.swift in Sources */,
 				84DE4A4D1D4E4DD1007F7984 /* GuHomeCollectionViewCell.swift in Sources */,
 				84F8EF431D08F95D003B820E /* GuHomeViewController.swift in Sources */,
 				84DAF05E1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift in Sources */,
 				842AD01A1CC497EE00DD7C92 /* GuPaymentViewController.swift in Sources */,
 				8402988A1D09868900C90083 /* GuNextViewController.swift in Sources */,
 				841248CD1D740E56006C5F6E /* GuMyViewController.swift in Sources */,
-				8483AC9E1E7035570060087E /* GuNetworkTools.swift in Sources */,
+				84B451CC1E70F0E2001FF600 /* GuNetworkTools.swift in Sources */,
 				842ACFE61CC496E300DD7C92 /* ViewController.swift in Sources */,
 				84DAF0581D7AC41D008A5B59 /* GuPreferentialViewController.swift in Sources */,
 				842ACFE41CC496E300DD7C92 /* AppDelegate.swift in Sources */,

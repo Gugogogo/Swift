@@ -9,7 +9,7 @@
 import UIKit
 
 class GuTabBarViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /**
@@ -22,10 +22,10 @@ class GuTabBarViewController: UITabBarController {
         self.tabBarController?.tabBar.backgroundColor = UIColor.red
         UITabBar.appearance().tintColor = UIColor.red
         setUpChildViewController ()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     func setUpChildViewController(vc:UIViewController,title:NSString,image:NSString,selectedImage:NSString)
     {
         vc.tabBarItem.title = title as String
@@ -51,15 +51,15 @@ class GuTabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

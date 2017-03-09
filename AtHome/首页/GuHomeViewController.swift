@@ -16,18 +16,15 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     var CollectionDataSource = NSMutableArray()
     var tempID = String()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController?.navigationBar.isTranslucent = true;
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-
+        //        self.navigationController?.navigationBar.isTranslucent = true;
+        //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
         self.navigationController?.navigationBar.barTintColor = UIColor.clear
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-
+        //        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         self.HeaderView.addSubview(ScrollView)
         self.HeaderView.addSubview(MyCollectionView)
         view.backgroundColor = RGB2244546
@@ -52,7 +49,6 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         tableView.register(UINib.init(nibName: "GuPreferentialTableViewCell", bundle: nil), forCellReuseIdentifier: "GuPreferentialTableViewCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.rowHeight = 150
         tableView.tableFooterView = UIView()
         tableView.translatesAutoresizingMaskIntoConstraints = false;
         tableView.tableHeaderView = self.HeaderView
@@ -101,9 +97,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         let netWork = GuNetworkTools()
         
-        netWork.getRequestData(type: .get, URLString: "http://m.adjo2o.com/webproxy/api/adjo2o/adjStore!findByTag.do?pageNum=1&pagesize=10&tagId=1128&cityCode=490") { (response) in
-            
-            print(response)
+        netWork.getRequestData(type: .get, URLString: "adjStore!findByTag.do?pageNum=1&pagesize=10&tagId=1128&cityCode=490") { (response) in
             
             let json = JSON.init(data: response as! Data)
             let model = findByTagIdData.init(fromJson:json)
@@ -146,7 +140,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             return HomeCell
         }
     }
-//
+    //
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
@@ -158,27 +152,22 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     func newPostingBtn(button:UIButton)  {
         
         let num = button.tag;
-        
-        
         let StoreTag:findByTagId  = self.DataSource[num] as!findByTagId
-        
-//
-    
-         print(StoreTag.storeName)
+        print(StoreTag.storeName)
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let nextVC = GuPreferentialViewController()
-//        
-////        let cellResult = self.DataSource[indexPath.row-1] as!Result
-//        
-//    
-//        
-//        self.navigationController?.pushViewController(nextVC, animated: true)
-//        
-//        
-//        
-//        print("点击事件")
-//    }
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        let nextVC = GuPreferentialViewController()
+    //
+    ////        let cellResult = self.DataSource[indexPath.row-1] as!Result
+    //
+    //
+    //
+    //        self.navigationController?.pushViewController(nextVC, animated: true)
+    //
+    //
+    //
+    //        print("点击事件")
+    //    }
     
     //MARK: 获取轮播图数据+10个功能
     func getScrollView()  {
@@ -238,7 +227,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = self.CollectionDataSource[indexPath.row] as? List
-                
+        
         if (data?.url.contains("List"))! {
             let PreferentialPay = GuPreferentialViewController()
             PreferentialPay.tempID = self.tempID
@@ -253,12 +242,12 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         let offsetY:CGFloat = scrollView.contentOffset.y
         if offsetY > 50{
-               UINavigationBar.appearance().isTranslucent     = false
-        self.navigationController?.navigationBar.barTintColor = RGB2244546
+            UINavigationBar.appearance().isTranslucent     = false
+            self.navigationController?.navigationBar.barTintColor = RGB2244546
             
-        self.navigationController?.navigationBar.subviews[0].alpha = 1.0
+            self.navigationController?.navigationBar.subviews[0].alpha = 1.0
         }else{
-               UINavigationBar.appearance().isTranslucent     = true
+            UINavigationBar.appearance().isTranslucent     = true
             self.navigationController?.navigationBar.barTintColor = UIColor.clear
             self.navigationController?.navigationBar.subviews[0].alpha = 0.0
             
@@ -278,9 +267,11 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.navigationController?.navigationBar.barTintColor = RGB2244546
         
         self.navigationController?.navigationBar.subviews[0].alpha = 1.0
+        self.navigationController?.navigationBar.subviews[1] .removeFromSuperview()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.subviews[1] .removeFromSuperview()
         //        self.navigationController?.navigationBar.isHidden = true
     }
     

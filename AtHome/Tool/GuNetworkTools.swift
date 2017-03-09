@@ -15,13 +15,15 @@ enum Methodtype {
 }
 
 class GuNetworkTools: NSObject {
-
+    
     func getRequestData(type:Methodtype,URLString:String,parameters:[String:Any]? = nil,finishedCallBack: @escaping (_ result: AnyObject) -> ()){
         
-        Alamofire.request(URLString, method: .get, parameters: parameters).responseJSON { (response) in
+        let URLStr:String = basicURL+URLString
+        
+        Alamofire.request(URLStr, method: .get, parameters: parameters).responseJSON { (response) in
             
             // 3 获取结果
-            guard let result = response.result.value else {
+            guard response.result.value != nil else {
                 print(response.result.error ?? "获取结果失败")
                 return
             }
@@ -29,8 +31,8 @@ class GuNetworkTools: NSObject {
             // 4 将结果回调出去
             finishedCallBack(response.data as AnyObject)
         }
-        }
-        
     }
     
+}
+
 

@@ -9,12 +9,12 @@
 import UIKit
 
 class GuNavigationViewController: UINavigationController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        [UINavigationBar appearance].clipsToBounds = YES;
-//    self.navigationBar.shadowImage = UIImage.init(named: "")
-//        UINavigationBar.appearance().clipsToBounds = true
+        //        [UINavigationBar appearance].clipsToBounds = YES;
+        //    self.navigationBar.shadowImage = UIImage.init(named: "")
+        //        UINavigationBar.appearance().clipsToBounds = true
         
     }
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -29,7 +29,7 @@ class GuNavigationViewController: UINavigationController {
             
             let  button = UIButton()
             button.bounds = CGRect.init(x: 0, y: 0, width: 25, height: 25)
-//            button.bounds = CGRectMake(0, 0, 70, 30)
+            //            button.bounds = CGRectMake(0, 0, 70, 30)
             button.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             button.setImage(UIImage.init(named: "返回箭头icon"), for: .normal)
@@ -41,22 +41,22 @@ class GuNavigationViewController: UINavigationController {
     }
     func back ()
     {
-         self.popViewController(animated: true)
+        self.popViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

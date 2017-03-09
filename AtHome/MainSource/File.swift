@@ -24,7 +24,7 @@ let  IS_WEB_DATA =  0
 
 var  picsUrl  =  "http://m.adjo2o.com/pics"
 
-
+var  basicURL = "http://m.adjo2o.com/webproxy/api/adjo2o/"
 
 //#define RGB255                [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0  alpha:1.0]
 //#define RGB144                [UIColor colorWithRed:144/255.0 green:144/255.0 blue:144/255.0  alpha:1.0]
