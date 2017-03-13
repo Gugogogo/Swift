@@ -18,12 +18,8 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     var DataSource = NSMutableArray()
     var CollectionDataSource = NSMutableArray()
     var ThirdData = NSMutableArray()
-    
     var tempID = String()
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +58,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         tableView.tableHeaderView = self.HeaderView
         return tableView
     }()
+    
     lazy var ScrollView:SDCycleScrollView = {
         let  view = SDCycleScrollView.init()
         view.currentPageDotColor = UIColor.red
@@ -90,6 +87,13 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     lazy var ThirdView: GuThirdView = {
         
         let thirdView = GuThirdView.init(frame: CGRect.init(x: 0, y:ViewH(view: self.MyCollectionView)+ViewY(view: self.MyCollectionView) + 15 , width: ScreenWidth, height: 135))
+        
+        thirdView.blockC = {(_ detailData:List) in
+            
+            let data = detailData
+            self.detaiList(dataL: data)
+        }
+        
         
         return thirdView
     }()
@@ -155,6 +159,8 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                 Hcell?.selectionStyle = .none
             }
             Hcell?.selectionStyle = .none
+            Hcell?.textLabel?.font = FontNum(Num: 15)
+            Hcell?.textLabel?.textColor = RGB505050;
             Hcell?.imageView?.image = UIImage.init(named: "特别推荐icon")
             Hcell?.textLabel?.text = "特别推荐"
             Hcell?.separatorInset = UIEdgeInsets.zero;
@@ -269,14 +275,34 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = self.CollectionDataSource[indexPath.row] as? List
         
-        if (data?.url.contains("List"))! {
+        self.detaiList(dataL: data!)
+    }
+
+    func detaiList(dataL:List) -> Void {
+        
+        
+        let URl:String = containStr(obj: dataL)
+        
+        if URl.contains("List") {
+            
             let PreferentialPay = GuPreferentialViewController()
             PreferentialPay.tempID = self.tempID
-            PreferentialPay.datasource  = data!
+            PreferentialPay.datasource  = dataL
             self.navigationController?.pushViewController(PreferentialPay, animated: false)
-            
         }
+        
+        
     }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+        
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         //UIColor.init(red: 224, green: 45, blue: 46, alpha: 1)
@@ -293,14 +319,6 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.navigationController?.navigationBar.subviews[0].alpha = 0.0
             
         }
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        
-        // Dispose of any resources that can be recreated.
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)

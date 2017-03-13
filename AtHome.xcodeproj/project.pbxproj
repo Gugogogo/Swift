@@ -30,6 +30,8 @@
 		849FB40D1D484FF7008AC98D /* AdsAndClassificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FB40C1D484FF7008AC98D /* AdsAndClassificationResponse.swift */; };
 		84B451CC1E70F0E2001FF600 /* GuNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B451CB1E70F0E2001FF600 /* GuNetworkTools.swift */; };
 		84B451CE1E70FB12001FF600 /* GuThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B451CD1E70FB12001FF600 /* GuThirdView.swift */; };
+		84B451D11E7651C7001FF600 /* GuGoodListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B451CF1E7651C6001FF600 /* GuGoodListTableViewCell.swift */; };
+		84B451D21E7651C7001FF600 /* GuGoodListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B451D01E7651C6001FF600 /* GuGoodListTableViewCell.xib */; };
 		84BD989D1D7446F600F4E0BC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BD98991D7446DD00F4E0BC /* Alamofire.framework */; };
 		84DAF0581D7AC41D008A5B59 /* GuPreferentialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAF0571D7AC41D008A5B59 /* GuPreferentialViewController.swift */; };
 		84DAF05E1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAF05C1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift */; };
@@ -82,6 +84,8 @@
 		849FB40C1D484FF7008AC98D /* AdsAndClassificationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsAndClassificationResponse.swift; sourceTree = "<group>"; };
 		84B451CB1E70F0E2001FF600 /* GuNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuNetworkTools.swift; sourceTree = "<group>"; };
 		84B451CD1E70FB12001FF600 /* GuThirdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuThirdView.swift; path = View/GuThirdView.swift; sourceTree = "<group>"; };
+		84B451CF1E7651C6001FF600 /* GuGoodListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuGoodListTableViewCell.swift; path = "优惠买单便利店/View/GuGoodListTableViewCell.swift"; sourceTree = "<group>"; };
+		84B451D01E7651C6001FF600 /* GuGoodListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GuGoodListTableViewCell.xib; path = "优惠买单便利店/View/GuGoodListTableViewCell.xib"; sourceTree = "<group>"; };
 		84BD98991D7446DD00F4E0BC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "/Users/gu/Library/Developer/Xcode/DerivedData/AtHome-gadimahfsbvjrlgotfzysvtemxby/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<absolute>"; };
 		84DAF0571D7AC41D008A5B59 /* GuPreferentialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuPreferentialViewController.swift; path = "优惠买单便利店/Controller/GuPreferentialViewController.swift"; sourceTree = "<group>"; };
 		84DAF05C1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuPreferentialTableViewCell.swift; path = "优惠买单便利店/View/GuPreferentialTableViewCell.swift"; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 			children = (
 				84DAF05C1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift */,
 				84DAF05D1D7AC48B008A5B59 /* GuPreferentialTableViewCell.xib */,
+				84B451CF1E7651C6001FF600 /* GuGoodListTableViewCell.swift */,
+				84B451D01E7651C6001FF600 /* GuGoodListTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				842ACFEE1CC496E300DD7C92 /* LaunchScreen.storyboard in Resources */,
 				84DE4A4E1D4E4DD1007F7984 /* GuHomeCollectionViewCell.xib in Resources */,
 				842ACFEB1CC496E300DD7C92 /* Assets.xcassets in Resources */,
+				84B451D21E7651C7001FF600 /* GuGoodListTableViewCell.xib in Resources */,
 				842ACFE91CC496E300DD7C92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +500,7 @@
 				84EA18161DB3B50900E34709 /* TagId.swift in Sources */,
 				8402988C1D09AB1900C90083 /* File.swift in Sources */,
 				842AD0161CC497C700DD7C92 /* GuAreaViewController.swift in Sources */,
+				84B451D11E7651C7001FF600 /* GuGoodListTableViewCell.swift in Sources */,
 				849FB40D1D484FF7008AC98D /* AdsAndClassificationResponse.swift in Sources */,
 				848F8FF01DCA1AD700B7B81E /* GuPreferetionHeardView.swift in Sources */,
 				846673571DB1DFD10034C4D2 /* findByTagId.swift in Sources */,

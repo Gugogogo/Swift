@@ -79,3 +79,22 @@ func replaceUrl(url:String) -> String {
     
 }
 
+func containStr(obj:List) -> String {
+    
+    
+    let set:CharacterSet = CharacterSet.init(charactersIn: ".")
+    let array = obj.url.components(separatedBy: set);
+    let ID:String = array[0]
+    
+    return ID
+}
+
+func CharacterSetStr(Str:String) -> String {
+    
+    let array = Str.components(separatedBy: CharacterSet.init(charactersIn: "{}&="))
+    
+    let tagID:NSString = array[1] as NSString
+    
+    return tagID as String
+}
+

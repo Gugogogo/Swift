@@ -29,6 +29,11 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
         self.automaticallyAdjustsScrollViewInsets = false
         
         let data:List = datasource as!List
+        
+//        self.tagID = data.url
+        
+        data.url
+        
         let array = data.url.components(separatedBy: CharacterSet.init(charactersIn: "{}&="))
         
         let tagID:NSString = array[1] as NSString
@@ -115,36 +120,6 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
             }
             
         }
-//        let defaultURl = "http://m.adjo2o.com/webproxy/api/adjo2o/adjStoreType!findByTagId.do?tag_id=\(self.tagID)&JSESSIONID=D79E5EB18200BB91F18E561C86F3CD9D"
-//        Alamofire.request(defaultURl)
-//            .response { (findByTagIdResponse) in
-//                
-//                let json = JSON.init(data: findByTagIdResponse.data!)
-//                let model = TagId.init(fromJson:json)
-//                if model.result == 1{
-//                    for data in model.data{
-//                        if data.listShow == "0" {
-//                            
-//                            let typeID:NSInteger = data.typeId
-//                            
-//                            let URL  = "http://m.adjo2o.com/webproxy/api/adjo2o/adjStoreType!findByTagAndType.do?tag_id=\(self.tagID)&cityCode=490&pageNum=1&pagesize=99&type_id=\(typeID)"
-//                            Alamofire.request(URL)
-//                                .response(completionHandler: { (data) in
-//                                    
-//                                    let json = JSON.init(data: data.data!)
-//                                    let model = findByTagIdData.init(fromJson:json)
-//                                    if model.result == 1 {
-//                                        for data in model.data {self.GoodsCat.add(data)}
-//                                    }
-//                                    self.MytableView.reloadData()
-//                                    
-//                                    
-//                                })
-//                        }
-//                    }
-//                    
-//                }
-//        }
     }
     
     
