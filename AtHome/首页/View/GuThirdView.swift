@@ -13,7 +13,11 @@ class GuThirdView: UIView {
     var LeftImageView = UIButton()
     var rightTop = UIButton()
     var rightBottom = UIButton()
-//    (AdsOrClassificationDetail*)obj
+    var Data = NSMutableArray()
+    
+    
+    
+    //    (AdsOrClassificationDetail*)obj
     typealias buttonS = (_ ImageData:AdsAndClassification)->Void
     
     override init(frame: CGRect) {
@@ -59,14 +63,15 @@ class GuThirdView: UIView {
     func Attribute() -> Void {
         
         self.LeftImageView.layer.borderWidth = 0.25
-        self.LeftImageView.layer.borderColor = RGBBackgroud.cgColor;
+        self.LeftImageView.layer.borderColor = UIColor.red.cgColor;
+        self.LeftImageView.adjustsImageWhenHighlighted = false
         self.rightTop.layer.borderColor = RGBBackgroud.cgColor;
         
         if UIScreen.main.nativeBounds.size.height>1600 {
             self.rightBottom.layer.borderWidth = 0.35;
             self.rightTop.layer.borderWidth = 0.35;
         }else{
-        
+            
             self.rightBottom.layer.borderWidth = 0.25;
             self.rightTop.layer.borderWidth = 0.25;
         }
@@ -76,14 +81,59 @@ class GuThirdView: UIView {
         for button:UIButton in buttonArray {
             
             button.addTarget(self, action: #selector(buttonclick), for:.touchUpInside)
+//            button.adjustsImageWhenHighlighted = false
+            
         }
         
         
         
     }
     
-    func buttonclick() -> Void {
+    
+    
+    func buttonclick(button:UIButton) -> Void {
+        
         
     }
+    
+    func imageData(array:NSMutableArray) -> Void {
+    
+        self.LeftImageView .sd_setBackgroundImage(with: NSURL.init(string: replaceUrl(url: (array[0] as! List).atturl)) as URL!, for: .normal)
+        
+        self.rightTop .sd_setBackgroundImage(with: NSURL.init(string: replaceUrl(url: (array[1] as! List).atturl)) as URL!, for: .normal)
+        self.rightBottom .sd_setBackgroundImage(with: NSURL.init(string: replaceUrl(url: (array[2] as! List).atturl)) as URL!, for: .normal)
+//        self.rightTop .sd_setBackgroundImage(with: NSURL.init(string: array[1] as! String) as URL!, for: .normal)
+//        
+//        self.rightBottom .sd_setBackgroundImage(with: NSURL.init(string: array[2] as! String) as URL!, for: .normal)
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        
+//        CALayer *layer = [CALayer layer];
+//        layer.frame = CGRectMake(0, 0,WIDTH(self.NumText), 0.5);
+//        layer.backgroundColor = RGB144.CGColor;
+//        [self.NumText.layer addSublayer:layer];
+        
+        let layer = CALayer()
+        
+        layer.frame = CGRect.init(x: 0, y: ViewW(view: self.LeftImageView)-1, width: 1, height: ViewH(view: self.LeftImageView))
+        layer.backgroundColor = RGB144.cgColor
+        
+//        self.LeftImageView.layer.addSublayer(layer)
+        
+        let bottomLay = CALayer()
+        
+        bottomLay.frame = CGRect.init(x: ViewW(view: self.LeftImageView), y: ViewH(view: self.rightTop)-1, width: ViewH(view: self.LeftImageView), height: 1)
+        
+        bottomLay.backgroundColor = RGB144.cgColor
+        
+//        self.rightTop.layer.addSublayer(layer)
+        
+        
+    }
+    
     
 }

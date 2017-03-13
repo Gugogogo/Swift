@@ -18,7 +18,7 @@ class GuBottomView: UIView {
     var ShouCang: UILabel
     var Message: UIButton
     var MessageLabel: UILabel
-
+    
     override convenience init(frame: CGRect) {
         self.init(frame: frame)
         self.initUI()
@@ -53,7 +53,7 @@ class GuBottomView: UIView {
         twoView.addSubview(ShouCang)
         threeView.addSubview(MessageLabel)
         threeView.addSubview(Message)
-
+        
         self.OverNumLabel.text = "余额"
         self.OverNumLabel.font = UIFont.systemFont(ofSize: 12)
         self.OverNumLabel.textColor = RGB255
@@ -65,7 +65,7 @@ class GuBottomView: UIView {
         self.MessageLabel.text = "消息"
         self.MessageLabel.font = UIFont.systemFont(ofSize: 12)
         self.MessageLabel.textAlignment = .center
-
+        
         self.MessageLabel.textColor = RGB255
         label.text = "元"
         label.font = UIFont.systemFont(ofSize: 10)
@@ -75,9 +75,9 @@ class GuBottomView: UIView {
         //self.OverNum.setTitleColor(RGBACOLOR(255, 188, 26, 1), forState: .Normal)
         self.Star.setImage(UIImage(named: "收藏icon"), for: .normal)
         self.Message.setImage(UIImage(named: "消息icon"), for: .normal)
-
+        
         
         
     }
-
+    
 }

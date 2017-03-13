@@ -16,11 +16,11 @@ enum Methodtype {
 
 class GuNetworkTools: NSObject {
     
-    func getRequestData(type:Methodtype,URLString:String,parameters:[String:Any]? = nil,finishedCallBack: @escaping (_ result: AnyObject) -> ()){
+    func getRequestData(type:Methodtype,URLString:String,finishedCallBack: @escaping (_ result: AnyObject) -> ()){
         
         let URLStr:String = basicURL+URLString
         
-        Alamofire.request(URLStr, method: .get, parameters: parameters).responseJSON { (response) in
+        Alamofire.request(URLStr, method: .get).responseJSON { (response) in
             
             // 3 获取结果
             guard response.result.value != nil else {
@@ -28,8 +28,10 @@ class GuNetworkTools: NSObject {
                 return
             }
             
+             let json = JSON.init(data: response.data!)
+            
             // 4 将结果回调出去
-            finishedCallBack(response.data as AnyObject)
+            finishedCallBack(json as AnyObject)
         }
     }
     

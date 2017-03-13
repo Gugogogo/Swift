@@ -10,11 +10,19 @@ import UIKit
 import SDCycleScrollView
 import SwiftyJSON
 import Alamofire
+
+
+
 class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate {
     
     var DataSource = NSMutableArray()
     var CollectionDataSource = NSMutableArray()
+    var ThirdData = NSMutableArray()
+    
     var tempID = String()
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +31,10 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         
         self.navigationController?.navigationBar.barTintColor = UIColor.clear
-        //        self.navigationController?.navigationBar.shadowImage = UIImage()
         
         self.HeaderView.addSubview(ScrollView)
         self.HeaderView.addSubview(MyCollectionView)
+        self.HeaderView.addSubview(ThirdView)
         view.backgroundColor = RGB2244546
         view.addSubview(MytableView)
         
@@ -36,7 +44,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     //MARK: 懒加载 tableView SDCycleScrollView
     lazy var HeaderView:UIView = {
-        let MyHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height:  200+160+15))
+        let MyHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height:  200+160+15+135+15))
         MyHeaderView.backgroundColor = RGBBackgroud
         return MyHeaderView
     }()
@@ -74,6 +82,31 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         CollectionView.register(UINib.init(nibName: "GuHomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GuHomeCollectionViewCell")
         CollectionView.dataSource = self;
         CollectionView.delegate = self
+        
+        
+        return CollectionView
+    }()
+    
+    lazy var ThirdView: GuThirdView = {
+        
+        let thirdView = GuThirdView.init(frame: CGRect.init(x: 0, y:ViewH(view: self.MyCollectionView)+ViewY(view: self.MyCollectionView) + 15 , width: ScreenWidth, height: 135))
+        
+        return thirdView
+    }()
+    
+    lazy var LastCollection: UICollectionView = {
+        
+        var flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = 0
+        //行距
+        flowLayout.minimumInteritemSpacing = 0
+        //列距
+        flowLayout.itemSize = CGSize.init(width: ScreenWidth/5, height:  80);
+        let CollectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 200, width: ScreenWidth, height: 160), collectionViewLayout: flowLayout)
+        CollectionView.backgroundColor = UIColor.white
+        CollectionView.register(UINib.init(nibName: "GuHomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GuHomeCollectionViewCell")
+        CollectionView.dataSource = self;
+        CollectionView.delegate = self
         return CollectionView
     }()
     
@@ -98,9 +131,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         let netWork = GuNetworkTools()
         
         netWork.getRequestData(type: .get, URLString: "adjStore!findByTag.do?pageNum=1&pagesize=10&tagId=1128&cityCode=490") { (response) in
-            
-            let json = JSON.init(data: response as! Data)
-            let model = findByTagIdData.init(fromJson:json)
+            let model = findByTagIdData.init(fromJson:response as! JSON)
             if model.result == 1{
                 for data in model.data{
                     
@@ -135,8 +166,15 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             
             HomeCell = HomeCell.cellWithTableView(tableView: self.MytableView) as! GuPreferentialTableViewCell
             HomeCell.findByTag(model: self.DataSource[indexPath.row-1] as!findByTagId)
-            HomeCell.YouHuiButton.tag = indexPath.row-1;
-            HomeCell.YouHuiButton.addTarget(self, action:#selector(newPostingBtn), for: .touchUpInside)
+            HomeCell.buttonModel = {
+                (_ Model:findByTagId?,str:NSString) in
+                
+                if str.contains("在线选购"){
+                    print("***在线选购***"+(Model?.storeName)!+"******")
+                }else{
+                    print("***优惠买单***"+(Model?.storeName)!+"******")
+                }
+            }
             return HomeCell
         }
     }
@@ -155,20 +193,6 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         let StoreTag:findByTagId  = self.DataSource[num] as!findByTagId
         print(StoreTag.storeName)
     }
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        let nextVC = GuPreferentialViewController()
-    //
-    ////        let cellResult = self.DataSource[indexPath.row-1] as!Result
-    //
-    //
-    //
-    //        self.navigationController?.pushViewController(nextVC, animated: true)
-    //
-    //
-    //
-    //        print("点击事件")
-    //    }
-    
     //MARK: 获取轮播图数据+10个功能
     func getScrollView()  {
         let imageURLStrings:NSMutableArray = []
@@ -181,7 +205,8 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                     
                     let ads:AdsAndClassification = model.data[i];
                     
-                    if ads.position == 0{
+                    switch ads.position{
+                    case  0:
                         let num = ads.list.count
                         for  i in 0..<num{
                             let obj:List = ads.list[i]
@@ -189,8 +214,9 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                             imageURLStrings.add(urlStr)
                         }
                         self.ScrollView.imageURLStringsGroup = imageURLStrings as [AnyObject]!
-                    }
-                    else if(ads.position == 1){
+                        
+                        break
+                    case  1:
                         
                         let num = ads.list.count
                         for  i in 0..<num{
@@ -198,12 +224,27 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                             
                             self.CollectionDataSource.add(obj)
                         }
-                        
                         self.MyCollectionView.reloadData()
+                        break
+                    case  2:
                         
+                        let num = ads.list.count
+                        for  i in 0..<num{
+                            let obj:List = ads.list[i]
+                            
+                            self.ThirdData.add(obj)
+                        }
                         
+                        self.ThirdView.imageData(array: self.ThirdData)
+                        
+                        break
+                        
+                    default: break
                     }
+                    
                 }
+                
+                
                 let set:CharacterSet = CharacterSet.init(charactersIn: "{}:")
                 let array = model.reserve.components(separatedBy: set);
                 let ID = array[2]

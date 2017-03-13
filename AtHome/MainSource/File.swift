@@ -33,3 +33,49 @@ var  basicURL = "http://m.adjo2o.com/webproxy/api/adjo2o/"
 //#define RGB505050             [UIColor colorWithRed:50/255.0 green:50/255.0 blue:50/255.0        alpha:1.0]
 //
 //#define Font(Num)             [UIFont systemFontOfSize:Num]
+
+func FontNum(Num:CGFloat) -> UIFont {
+    
+    switch ScreenWidth {
+    case 320:
+        
+        return UIFont.systemFont(ofSize: Num-1)
+    case 375:
+        return UIFont.systemFont(ofSize: Num)
+    default:
+        return UIFont.systemFont(ofSize: Num+1)
+    }
+    
+}
+
+
+/// 获取控件高度
+/// - Parameter view: 当前view
+func ViewH(view:UIView) -> CGFloat {
+    return view.frame.size.height
+}
+
+func ViewW(view:UIView) -> CGFloat {
+    
+    return view.frame.size.width
+}
+
+func ViewX(view:UIView) -> CGFloat {
+    
+    return view.frame.origin.x
+}
+
+func ViewY(view:UIView) -> CGFloat {
+    
+    return view.frame.origin.y
+}
+
+
+func replaceUrl(url:String) -> String {
+    
+    let urlStr = url.replacingOccurrences(of: "fs:", with: picsUrl)
+    
+    return urlStr
+    
+}
+

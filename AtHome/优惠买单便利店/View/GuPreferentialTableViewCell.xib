@@ -70,6 +70,9 @@
                             <constraint firstAttribute="height" constant="22" id="Hne-bh-r0t"/>
                         </constraints>
                         <state key="normal" image="红色电话icon"/>
+                        <connections>
+                            <action selector="CallPhone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cJ3-oz-adQ"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="地址icon" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-AZ-CJV">
                         <rect key="frame" x="23" y="106" width="12" height="12"/>

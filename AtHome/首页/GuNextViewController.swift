@@ -9,7 +9,7 @@
 import UIKit
 
 class GuNextViewController: UIViewController {
-
+    
     var Name = String()
     
     override func viewDidLoad() {
@@ -32,6 +32,6 @@ class GuNextViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
+    
+    
 }

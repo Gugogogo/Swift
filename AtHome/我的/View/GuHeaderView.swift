@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class GuHeaderView: UIView {
-  
+    
     /**头像*/
     let IconImageView = UIButton()
     // IconImageView: UIButton
@@ -36,7 +36,7 @@ class GuHeaderView: UIView {
         
         self.initUI()
         self.Attribute()
-
+        
         
         
         
@@ -68,20 +68,20 @@ class GuHeaderView: UIView {
         
         
         
-            view.snp.makeConstraints { (make) in
+        view.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(1)
         }
-
         
-
+        
+        
         imageView.image = UIImage(named:"矩形-18")
         imageView.snp.makeConstraints { (make) in
             make.left.top.equalTo(0)
             make.width.equalTo(self.snp.width)
             make.height.equalTo(self.snp.height)
         }
-
+        
         
         self.NameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(34)
@@ -90,12 +90,12 @@ class GuHeaderView: UIView {
             make.width.equalTo(80)
         }
         
-
+        
         self.LoginButton.snp.makeConstraints { (make) in
             make.right.equalTo(view.snp.left).offset(-10)
             make.centerY.equalTo(self.snp.centerY)
         }
-
+        
         self.RegButton.snp.makeConstraints { (make) in
             make.left.equalTo(view.snp.right).offset(10)
             make.centerY.equalTo(self.snp.centerY)
@@ -128,14 +128,14 @@ class GuHeaderView: UIView {
         self.setting.setImage(UIImage(named: "设置icon"), for: .selected)
         
         
-//        self.LoginButton.imageEdgeInsets = UIEdgeInsetsMake(0,0, 0, -(self.LoginButton.titleLabel?.frame.size.width)!);
-//        self.LoginButton.titleEdgeInsets = UIEdgeInsetsMake(0, (self.LoginButton.imageView?.frame.size.width)!, 0,0);
-////
-//        
-//        self.RegButton.imageEdgeInsets = UIEdgeInsetsMake(0,0, 0, -(self.RegButton.titleLabel?.frame.size.width)!);
-//        self.RegButton.titleEdgeInsets = UIEdgeInsetsMake(0, (self.RegButton.imageView?.frame.size.width)!, 0, -(self.RegButton.imageView?.frame.size.width)!);
+        //        self.LoginButton.imageEdgeInsets = UIEdgeInsetsMake(0,0, 0, -(self.LoginButton.titleLabel?.frame.size.width)!);
+        //        self.LoginButton.titleEdgeInsets = UIEdgeInsetsMake(0, (self.LoginButton.imageView?.frame.size.width)!, 0,0);
+        ////
+        //
+        //        self.RegButton.imageEdgeInsets = UIEdgeInsetsMake(0,0, 0, -(self.RegButton.titleLabel?.frame.size.width)!);
+        //        self.RegButton.titleEdgeInsets = UIEdgeInsetsMake(0, (self.RegButton.imageView?.frame.size.width)!, 0, -(self.RegButton.imageView?.frame.size.width)!);
         
-
+        
         
         
     }

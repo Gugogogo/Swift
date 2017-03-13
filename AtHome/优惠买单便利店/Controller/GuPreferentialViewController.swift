@@ -15,16 +15,12 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
     var datasource:AnyObject  = List.self
     var GoodsCat = NSMutableArray()
     var tagID = NSInteger()
-    
-    //    var tooBtn = UIButton.init(type: .custom)
+
     
     
     var tempID = String()
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        self.navigationController?.navigationBar.barTintColor = UIColor.red
-        
         self.navigationController?.navigationBar.subviews[0].alpha = 1.0
     }
     override func viewDidLoad() {
@@ -33,11 +29,9 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
         self.automaticallyAdjustsScrollViewInsets = false
         
         let data:List = datasource as!List
-        //        self.edgesForExtendedLayout = UIRectEdgeNone;
         let array = data.url.components(separatedBy: CharacterSet.init(charactersIn: "{}&="))
         
         let tagID:NSString = array[1] as NSString
-        
         self.tagID = tagID.integerValue
         
         
@@ -48,6 +42,8 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
         view.addSubview(MytableView)
         view.addSubview(topButton)
         
+        
+        
         findByTagId()
         
         self.view.backgroundColor = UIColor.white
@@ -56,7 +52,6 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
     
     lazy var MytableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect.init(x: 0, y:0, width: ScreenWidth, height: ScreenHeight))
-        //        tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "GuPreferentialTableViewCell", bundle: nil), forCellReuseIdentifier: "GuPreferentialTableViewCell")
@@ -89,36 +84,67 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
     
     func findByTagId()  {
         
-    let defaultURl = "http://m.adjo2o.com/webproxy/api/adjo2o/adjStoreType!findByTagId.do?tag_id=\(self.tagID)&JSESSIONID=D79E5EB18200BB91F18E561C86F3CD9D"
-    Alamofire.request(defaultURl)
-             .response { (findByTagIdResponse) in
-                
-     let json = JSON.init(data: findByTagIdResponse.data!)
-     let model = TagId.init(fromJson:json)
-         if model.result == 1{
-            for data in model.data{
-                if data.listShow == "0" {
-                    
-                    let typeID:NSInteger = data.typeId
-                    
-                    let URL  = "http://m.adjo2o.com/webproxy/api/adjo2o/adjStoreType!findByTagAndType.do?tag_id=\(self.tagID)&cityCode=490&pageNum=1&pagesize=99&type_id=\(typeID)"
-    Alamofire.request(URL)
-             .response(completionHandler: { (data) in
-                                    
-    let json = JSON.init(data: data.data!)
-    let model = findByTagIdData.init(fromJson:json)
-        if model.result == 1 {
-           for data in model.data {self.GoodsCat.add(data)}
-                             }
-                self.MytableView.reloadData()
-
-                
-                                })
-                                        }
-                                   }
-
+        
+         let netWork = GuNetworkTools()
+        
+         netWork.getRequestData(type: .get, URLString: "adjStoreType!findByTagId.do?tag_id=\(self.tagID)&JSESSIONID=D79E5EB18200BB91F18E561C86F3CD9D") { (response) in
+            
+            let model = TagId.init(fromJson:response as! JSON )
+            if model.result == 1{
+                for data in model.data{
+                    if data.listShow == "0" {
+                        
+                        let typeID:NSInteger = data.typeId
+                        
+                        let URL  = "http://m.adjo2o.com/webproxy/api/adjo2o/adjStoreType!findByTagAndType.do?tag_id=\(self.tagID)&cityCode=490&pageNum=1&pagesize=99&type_id=\(typeID)"
+                        Alamofire.request(URL)
+                            .response(completionHandler: { (data) in
+                                
+                                let json = JSON.init(data: data.data!)
+                                let model = findByTagIdData.init(fromJson:json)
+                                if model.result == 1 {
+                                    for data in model.data {self.GoodsCat.add(data)}
+                                }
+                                self.MytableView.reloadData()
+                                
+                                
+                            })
+                    }
                 }
+                
+            }
+            
         }
+//        let defaultURl = "http://m.adjo2o.com/webproxy/api/adjo2o/adjStoreType!findByTagId.do?tag_id=\(self.tagID)&JSESSIONID=D79E5EB18200BB91F18E561C86F3CD9D"
+//        Alamofire.request(defaultURl)
+//            .response { (findByTagIdResponse) in
+//                
+//                let json = JSON.init(data: findByTagIdResponse.data!)
+//                let model = TagId.init(fromJson:json)
+//                if model.result == 1{
+//                    for data in model.data{
+//                        if data.listShow == "0" {
+//                            
+//                            let typeID:NSInteger = data.typeId
+//                            
+//                            let URL  = "http://m.adjo2o.com/webproxy/api/adjo2o/adjStoreType!findByTagAndType.do?tag_id=\(self.tagID)&cityCode=490&pageNum=1&pagesize=99&type_id=\(typeID)"
+//                            Alamofire.request(URL)
+//                                .response(completionHandler: { (data) in
+//                                    
+//                                    let json = JSON.init(data: data.data!)
+//                                    let model = findByTagIdData.init(fromJson:json)
+//                                    if model.result == 1 {
+//                                        for data in model.data {self.GoodsCat.add(data)}
+//                                    }
+//                                    self.MytableView.reloadData()
+//                                    
+//                                    
+//                                })
+//                        }
+//                    }
+//                    
+//                }
+//        }
     }
     
     
@@ -134,7 +160,15 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
         HomeCell = HomeCell.cellWithTableView(tableView: self.MytableView) as! GuPreferentialTableViewCell
         HomeCell.findByTag(model: self.GoodsCat[indexPath.row] as! findByTagId)
         
-        //            HomeCell.AddressLabel.text = "省略号拉沙拉"
+        HomeCell.buttonModel = {
+            (_ Model:findByTagId?,str:NSString) in
+            
+            if str.contains("在线选购"){
+                print("***在线选购***"+(Model?.storeName)!+"******")
+            }else{
+                print("***优惠买单***"+(Model?.storeName)!+"******")
+            }
+        }
         return HomeCell
     }
     
