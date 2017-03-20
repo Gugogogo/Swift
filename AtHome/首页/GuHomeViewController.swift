@@ -315,6 +315,11 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        let nav = (self.navigationController?.navigationBar)!
+        nav.setBackgroundImage(UIImage.imageWithColor(color: RGB2244546), for: UIBarMetrics.default)
+        nav.shadowImage = UIImage.imageWithColor(color: RGB2244546)
+        
+        nav.isTranslucent = false
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -325,13 +330,15 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     func drawCustomNavigationBar(offsetY:CGFloat) {
         let nav = (self.navigationController?.navigationBar)!
         
-        if offsetY > 50{
+        if offsetY > 64{
             
             nav.setBackgroundImage(UIImage.imageWithColor(color: RGB2244546), for: UIBarMetrics.default)
             nav.shadowImage = UIImage.imageWithColor(color: RGB2244546)
+           
             nav.isTranslucent = false
         }else{
-            nav.setBackgroundImage(transparentPixel, for: UIBarMetrics.default)
+            nav.setBackgroundImage( UIImage.init(named: "navbar"), for: UIBarMetrics.default)
+             nav.shadowImage = UIImage.init(named: "navbar")
             nav.shadowImage = transparentPixel
             nav.isTranslucent = true
             

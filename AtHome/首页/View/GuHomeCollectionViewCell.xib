@@ -29,7 +29,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="便利店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIr-0M-WpP">
-                        <rect key="frame" x="19" y="63" width="37" height="14.5"/>
+                        <rect key="frame" x="19" y="60" width="37" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                 <constraint firstItem="vtx-kw-8RI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="QHP-0t-9DS"/>
                 <constraint firstItem="XIr-0M-WpP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Qce-4D-2yf"/>
                 <constraint firstItem="vtx-kw-8RI" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="W5H-dI-d42"/>
-                <constraint firstItem="XIr-0M-WpP" firstAttribute="top" secondItem="vtx-kw-8RI" secondAttribute="bottom" constant="9" id="W71-tR-9tv"/>
+                <constraint firstItem="XIr-0M-WpP" firstAttribute="top" secondItem="vtx-kw-8RI" secondAttribute="bottom" constant="6" id="W71-tR-9tv"/>
             </constraints>
             <connections>
                 <outlet property="HomeIconImageView" destination="vtx-kw-8RI" id="2tT-pg-rEj"/>
