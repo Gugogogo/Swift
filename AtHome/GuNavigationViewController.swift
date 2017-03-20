@@ -24,7 +24,7 @@ class GuNavigationViewController: UINavigationController {
             self.navigationBar.shadowImage = UIImage.init(named: "")
             self.navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 15),NSForegroundColorAttributeName:UIColor.white]
             
-            self.navigationController?.navigationBar.backgroundColor = RGB2244546
+//            self.navigationController?.navigationBar.backgroundColor = RGB2244546
             
             
             let  button = UIButton()
@@ -36,6 +36,10 @@ class GuNavigationViewController: UINavigationController {
             button.setImage(UIImage.init(named: "返回箭头icon"), for: .highlighted)
             button.addTarget(self, action: #selector(GuNavigationViewController.back), for: .touchUpInside)
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: button)
+        }
+        else{
+        
+            
         }
         super.pushViewController(viewController, animated: animated)
     }

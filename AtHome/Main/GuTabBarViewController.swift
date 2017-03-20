@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuTabBarViewController: UITabBarController {
+class GuTabBarViewController: UITabBarController,UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +18,9 @@ class GuTabBarViewController: UITabBarController {
          #import "GuHomeViewController.h"
          #import "GuPaymentViewController.h"
          */
-        self.view.backgroundColor = UIColor.white
-        self.tabBarController?.tabBar.backgroundColor = UIColor.red
-        UITabBar.appearance().tintColor = UIColor.red
+//        self.view.backgroundColor = UIColor.white
+//        self.tabBarController?.tabBar.backgroundColor = UIColor.red
+//        UITabBar.appearance().tintColor = UIColor.red
         setUpChildViewController ()
         
         // Do any additional setup after loading the view.
@@ -51,7 +51,7 @@ class GuTabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+  
     /*
      // MARK: - Navigation
      

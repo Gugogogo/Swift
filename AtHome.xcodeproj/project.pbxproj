@@ -11,6 +11,7 @@
 		8402988A1D09868900C90083 /* GuNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840298891D09868900C90083 /* GuNextViewController.swift */; };
 		8402988C1D09AB1900C90083 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402988B1D09AB1900C90083 /* File.swift */; };
 		841248CD1D740E56006C5F6E /* GuMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841248CC1D740E56006C5F6E /* GuMyViewController.swift */; };
+		8426741A1E7FBBFF008941A1 /* imageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842674191E7FBBFF008941A1 /* imageWithColor.swift */; };
 		842ACFE41CC496E300DD7C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ACFE31CC496E300DD7C92 /* AppDelegate.swift */; };
 		842ACFE61CC496E300DD7C92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ACFE51CC496E300DD7C92 /* ViewController.swift */; };
 		842ACFE91CC496E300DD7C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842ACFE71CC496E300DD7C92 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		840298891D09868900C90083 /* GuNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuNextViewController.swift; sourceTree = "<group>"; };
 		8402988B1D09AB1900C90083 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		841248CC1D740E56006C5F6E /* GuMyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuMyViewController.swift; sourceTree = "<group>"; };
+		842674191E7FBBFF008941A1 /* imageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageWithColor.swift; sourceTree = "<group>"; };
 		842ACFE01CC496E300DD7C92 /* AtHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842ACFE31CC496E300DD7C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		842ACFE51CC496E300DD7C92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				842ACFE51CC496E300DD7C92 /* ViewController.swift */,
 				8402988B1D09AB1900C90083 /* File.swift */,
 				84506F801DB651D500C2EDD1 /* GuRequest.swift */,
+				842674191E7FBBFF008941A1 /* imageWithColor.swift */,
 			);
 			path = MainSource;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				84DAF05E1D7AC48B008A5B59 /* GuPreferentialTableViewCell.swift in Sources */,
 				842AD01A1CC497EE00DD7C92 /* GuPaymentViewController.swift in Sources */,
 				8402988A1D09868900C90083 /* GuNextViewController.swift in Sources */,
+				8426741A1E7FBBFF008941A1 /* imageWithColor.swift in Sources */,
 				841248CD1D740E56006C5F6E /* GuMyViewController.swift in Sources */,
 				84B451CC1E70F0E2001FF600 /* GuNetworkTools.swift in Sources */,
 				842ACFE61CC496E300DD7C92 /* ViewController.swift in Sources */,

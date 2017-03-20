@@ -19,14 +19,16 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     var CollectionDataSource = NSMutableArray()
     var ThirdData = NSMutableArray()
     var tempID = String()
-
+    
+    let transparentPixel = UIImage.imageWithColor(color: UIColor.clear)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //        self.navigationController?.navigationBar.isTranslucent = true;
         //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.clear
+        //        self.navigationController?.navigationBar.barTintColor = UIColor.clear
         
         self.HeaderView.addSubview(ScrollView)
         self.HeaderView.addSubview(MyCollectionView)
@@ -52,7 +54,8 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "GuPreferentialTableViewCell", bundle: nil), forCellReuseIdentifier: "GuPreferentialTableViewCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorColor = RGBlineColor
+        tableView.estimatedRowHeight = 170;
         tableView.tableFooterView = UIView()
         tableView.translatesAutoresizingMaskIntoConstraints = false;
         tableView.tableHeaderView = self.HeaderView
@@ -190,7 +193,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         if indexPath.row == 0 {
             return 50
         }
-        return 168
+        return UITableViewAutomaticDimension
         
     }
     func newPostingBtn(button:UIButton)  {
@@ -277,7 +280,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         self.detaiList(dataL: data!)
     }
-
+    
     func detaiList(dataL:List) -> Void {
         
         
@@ -305,34 +308,35 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        //UIColor.init(red: 224, green: 45, blue: 46, alpha: 1)
-        
         let offsetY:CGFloat = scrollView.contentOffset.y
-        if offsetY > 50{
-            UINavigationBar.appearance().isTranslucent     = false
-            self.navigationController?.navigationBar.barTintColor = RGB2244546
-            
-            self.navigationController?.navigationBar.subviews[0].alpha = 1.0
-        }else{
-            UINavigationBar.appearance().isTranslucent     = true
-            self.navigationController?.navigationBar.barTintColor = UIColor.clear
-            self.navigationController?.navigationBar.subviews[0].alpha = 0.0
-            
-        }
+        
+        drawCustomNavigationBar(offsetY:offsetY)
+        
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
-        self.navigationController?.navigationBar.barTintColor = RGB2244546
-        
-        self.navigationController?.navigationBar.subviews[0].alpha = 1.0
-        self.navigationController?.navigationBar.subviews[1] .removeFromSuperview()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.subviews[1] .removeFromSuperview()
-        //        self.navigationController?.navigationBar.isHidden = true
+        
+        drawCustomNavigationBar(offsetY:0)
     }
     
-    
+    func drawCustomNavigationBar(offsetY:CGFloat) {
+        let nav = (self.navigationController?.navigationBar)!
+        
+        if offsetY > 50{
+            
+            nav.setBackgroundImage(UIImage.imageWithColor(color: RGB2244546), for: UIBarMetrics.default)
+            nav.shadowImage = UIImage.imageWithColor(color: RGB2244546)
+            nav.isTranslucent = false
+        }else{
+            nav.setBackgroundImage(transparentPixel, for: UIBarMetrics.default)
+            nav.shadowImage = transparentPixel
+            nav.isTranslucent = true
+            
+        }
+        
+    }
 }
+

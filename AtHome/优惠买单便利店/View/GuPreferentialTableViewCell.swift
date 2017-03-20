@@ -37,7 +37,7 @@ class GuPreferentialTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.separatorInset = UIEdgeInsets.zero;
         self.IconImageView.layer.borderWidth = 0.5
-        self.IconImageView.layer.borderColor = RGB226226226.cgColor
+        self.IconImageView.layer.borderColor = RGBlineColor.cgColor
         
         self.titmeLabel.text = "营业时间:08:00-23:00"
         self.AddressLabel.text = "这些值还要往上一个控制器传这些值还要往上一个控制器传这些值还要往上一个"
@@ -77,11 +77,10 @@ class GuPreferentialTableViewCell: UITableViewCell {
     
     func newPostingBtn(button:UIButton) -> Void {
         
-        
         if buttonModel != nil  {
             buttonModel!(self.TagModel as? findByTagId,button.currentTitle! as NSString)
         }
-           
+        
     }
     
     @IBAction func CallPhone(_ sender: Any) {

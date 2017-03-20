@@ -30,9 +30,6 @@ class GuPreferentialViewController: UIViewController ,UITableViewDelegate,UITabl
         
         let data:List = datasource as!List
         
-//        self.tagID = data.url
-        
-        data.url
         
         let array = data.url.components(separatedBy: CharacterSet.init(charactersIn: "{}&="))
         

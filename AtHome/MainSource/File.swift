@@ -13,7 +13,7 @@ let RGB144 = UIColor.init(red: 144/255, green: 144/255, blue: 144/255, alpha: 1)
 let RGB2244546 = UIColor.init(red: 224/255, green: 45/255, blue: 46/255, alpha: 1)
 let RGB505050 = UIColor.init(red: 50/255, green: 50/255, blue: 50/255, alpha: 1)
 let RGBBackgroud = UIColor.init(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
-let RGB226226226 = UIColor.init(red: 226/255, green: 226/255, blue: 226/255, alpha: 1)
+let RGBlineColor = UIColor.init(red: 226/255, green: 226/255, blue: 226/255, alpha: 1)
 
 
 let ScreenWidth = UIScreen.main.bounds.size.width
