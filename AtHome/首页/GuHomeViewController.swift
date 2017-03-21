@@ -13,12 +13,25 @@ import Alamofire
 
 
 
-class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate {
+class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,MAMapViewDelegate,AMapLocationManagerDelegate {
     
     var DataSource = NSMutableArray()
     var CollectionDataSource = NSMutableArray()
     var ThirdData = NSMutableArray()
     var tempID = String()
+    
+    var mapView: MAMapView!
+    var isRecording: Bool = false
+    var locationButton: UIButton!
+    var searchButton: UIButton!
+    var imageLocated: UIImage!
+    var imageNotLocate: UIImage!
+    var locationManager:AMapLocationManager!
+//    var LocationManager = 
+    
+//    var tipView: TipView!
+//    var statusView: StatusView!
+//    var currentRoute: Route?
     
     let transparentPixel = UIImage.imageWithColor(color: UIColor.clear)
     
@@ -30,6 +43,7 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         //        self.navigationController?.navigationBar.barTintColor = UIColor.clear
         
+
         self.HeaderView.addSubview(ScrollView)
         self.HeaderView.addSubview(MyCollectionView)
         self.HeaderView.addSubview(ThirdView)
@@ -38,6 +52,40 @@ class GuHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         getCellData()
         getScrollView()
+        
+        mapView = MAMapView.init(frame: self.view.bounds)
+        mapView.isShowsUserLocation = true
+        self.view.addSubview(mapView)
+        
+        configLocationManager()
+        
+       
+//         initMapView()
+    }
+    
+    private func configLocationManager() {
+        self.locationManager = AMapLocationManager()
+        self.locationManager.delegate = self
+        self.locationManager.pausesLocationUpdatesAutomatically = false
+        self.locationManager.allowsBackgroundLocationUpdates = false
+        self.locationManager.distanceFilter = 5000;
+        self.locationManager.startUpdatingLocation()
+    }
+    
+//    func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
+//        
+//       print(userLocation.coordinate.longitude)
+//    }
+    
+    func mapView(_ mapView: MAMapView!, didFailToLocateUserWithError error: Error!) {
+        print(error)
+    }
+    
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         mapView.delegate = self;
     }
     
     //MARK: 懒加载 tableView SDCycleScrollView

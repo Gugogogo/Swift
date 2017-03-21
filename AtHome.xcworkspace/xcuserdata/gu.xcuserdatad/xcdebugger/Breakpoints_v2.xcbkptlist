@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
-            timestampString = "511696207.943328"
+            timestampString = "511782324.816816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "newPostingBtn(button:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,27 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
-            timestampString = "511696207.943328"
+            timestampString = "511782324.816816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
-            timestampString = "511696207.943328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "getCellData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -100,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
-            timestampString = "511696207.943328"
+            timestampString = "511782324.816816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "getScrollView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
-            timestampString = "511696207.943328"
+            timestampString = "511782324.816816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "getScrollView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
-            timestampString = "511696207.943328"
+            timestampString = "511782324.816816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "getCellData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -260,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
-            timestampString = "511696207.943328"
+            timestampString = "511782324.816816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "ThirdView"
             landmarkType = "24">
          </BreakpointContent>
@@ -272,7 +256,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AtHome/GuNavigationViewController.swift"
@@ -282,6 +266,22 @@
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "pushViewController(_:animated:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AtHome/&#x9996;&#x9875;/GuHomeViewController.swift"
+            timestampString = "511782324.816816"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "mapView(_:didFailToLocateUserWithError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

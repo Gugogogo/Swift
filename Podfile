@@ -10,8 +10,8 @@ target 'AtHome' do
     pod 'SDCycleScrollView'
     pod 'SnapKit'
     pod 'SwipeTableView'
-
-
+    pod 'AMap2DMap' #2D地图SDK
+    pod 'AMapLocation'
 
   # Pods for AtHome
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+let APIKey = "0ee1b6f9390384f16428669d4cbc7e4d"
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame:UIScreen.main.bounds)
-//        let tabBarController = GuTabBarViewController()
-        let tabBarController = GuTabBarViewController()
+         AMapServices.shared().enableHTTPS = true
+         AMapServices.shared().apiKey = APIKey
+         let tabBarController = GuTabBarViewController()
         
         
         //导航条背景透明,
